@@ -1,0 +1,17 @@
+{
+  "name": "iotclient",
+  "version": "1.0.0",
+  "description": "test iot",
+  "main": "app.js",
+  "dependencies": {
+    "aws-iot-device-sdk": "^2.0.0",
+    "ffi": "^2.2.0"
+
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node ./app.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
