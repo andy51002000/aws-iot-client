@@ -5,7 +5,7 @@ Features in iot client application:
 * Get Bios Serial Number
 
 
-#Setup
+# Setup
 * Step 1. Download key, cert, and root-CA to your working folder
 * Step 2. Add a Thing.json
 * Step 3. Configure your Thing.json like
@@ -22,5 +22,5 @@ Features in iot client application:
 
 * Step 4. npm install
 
-#How to use it
+# How to use it
 Just right click start.psl
