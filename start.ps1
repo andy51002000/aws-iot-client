@@ -5,7 +5,11 @@
 # exit if cmdlet gives error
 $ErrorActionPreference = "Stop"
 
+if( !(test-path ./node_modules)){
+    npm install --global --production windows-build-tools
+    npm install
 
+}
 
 
 "`nRunning pub/sub sample application..."
