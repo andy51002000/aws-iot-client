@@ -2,6 +2,7 @@
 
 Features in iot client application: 
 * Turn On\Off the display
+* Control medial player, play, pause, next, stop
 * Get Bios Serial Number
 
 
@@ -12,11 +13,11 @@ Features in iot client application:
 
 ```sh
 {
-    "keyPath": "./testclient.private.key",
-    "certPath": "./testclient.cert.pem",
+    "keyPath": "YOUR_PRIVATE_KEY_PATH",
+    "certPath": "YOUR_CERT_PEM_PATH",
     "caPath": "./root-CA.crt",
-    "clientId": "YOUR Client ID on AWS IoT",
-    "host": "YOUR END POINT"
+    "clientId": "YOUR_Client_ID_on_AWS_IoT",
+    "host": "YOUR_END_POINT"
 }
 ```
 

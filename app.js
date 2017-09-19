@@ -1,5 +1,6 @@
 var awsIot = require('aws-iot-device-sdk');
 var display = require('./DisplayControl');
+var player = require('./MusicPlayerControl');
 var thing = require('./thing.json');
 var thingShadows = awsIot.thingShadow(thing);
 
@@ -42,9 +43,7 @@ thingShadows.on('connect', function(result) {
     console.log("Connected...");     
     // An update right away causes a timeout error, so we wait about 2 seconds
     setTimeout(function() {
-
         UpdateBiosSerialNumber();            
-
     }, 2500);
 
 })
@@ -64,7 +63,30 @@ thingShadows
                 console.log("turn on display");
                 display('on');          
                 console.log("Update:" + thingShadows.update(thing.clientId, {"state": {"reported": {"monitor" : 'on'}}}));
-            } 
+            } else if (stateObject.state.player ==='play'){
+                console.log("music play");
+                player.musicPlay(function(updatereport){
+                    console.log("Update:" + thingShadows.update(thing.clientId, updatereport));
+                });        
+                
+            } else if (stateObject.state.player ==='pause'){
+                console.log("music pause");
+                player.musicPause(function(updatereport){
+                    console.log("Update:" + thingShadows.update(thing.clientId, updatereport));
+                });              
+                            
+            } else if (stateObject.state.player ==='next'){
+                console.log("music next");
+                player.musicNext(function(updatereport){
+                    console.log("Update:" + thingShadows.update(thing.clientId, updatereport));
+                });                       
+                            
+            } else if (stateObject.state.player ==='pre'){
+                console.log("music previours");
+                player.musicPre(function(updatereport){
+                    console.log("Update:" + thingShadows.update(thing.clientId, updatereport));
+                });             
+            }
 
         });
 

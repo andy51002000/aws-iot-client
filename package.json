@@ -1,16 +1,20 @@
 {
   "name": "iotclient",
-  "version": "1.0.0",
-  "description": "test iot",
+  "version": "1.0.1",
+  "description": "aws iot client to watch device status on cloud and control device",
   "main": "app.js",
   "dependencies": {
     "aws-iot-device-sdk": "^2.0.0",
-    "ffi": "^2.2.0"
-
+    "ffi": "^2.2.0",
+    "robotjs": "^0.4.7"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^3.5.3"
+  },
   "scripts": {
-    "start": "node ./app.js"
+    "start": "node ./app.js",
+    "test": "mocha || true"
   },
   "author": "",
   "license": "ISC"
