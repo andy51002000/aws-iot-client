@@ -88,4 +88,18 @@ describe("MusicPlayerControl", function(){
             assert.isTrue(updatereport.equals(expected), `updateshadow is not expected:${updatereport}` )
         });
     })
+
+    it('updatereport should be player:open', function(){
+        let expected = {
+            state: {
+                reported:{
+                    player: "open"
+                }
+            }
+        }
+        music.musicOpen(function(updatereport){
+            //console.log(updatereport)
+            assert.isTrue(updatereport.equals(expected), `updateshadow is not expected:${updatereport}` )
+        });
+    })
 })

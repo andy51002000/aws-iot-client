@@ -1,6 +1,6 @@
 {
   "name": "iotclient",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "aws iot client to watch device status on cloud and control device",
   "main": "app.js",
   "dependencies": {

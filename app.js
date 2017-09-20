@@ -86,6 +86,11 @@ thingShadows
                 player.musicPre(function(updatereport){
                     console.log("Update:" + thingShadows.update(thing.clientId, updatereport));
                 });             
+            } else if (stateObject.state.player ==='open'){
+                console.log("music open");
+                player.musicOpen(function(updatereport){
+                    console.log("Update:" + thingShadows.update(thing.clientId, updatereport));
+                });             
             }
 
         });
