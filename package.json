@@ -14,7 +14,7 @@
   },
   "scripts": {
     "start": "node ./app.js",
-    "test": "mocha || true"
+    "test": "mocha "
   },
   "author": "",
   "license": "ISC"

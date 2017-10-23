@@ -4,7 +4,10 @@ Features in iot client application:
 * Turn On\Off the display
 * Control medial player, play, pause, next, stop
 * Get Bios Serial Number
+* System shutdown
 
+#Prerequisite
+You have to regist a thing on AWS-Iot. Then populate the thing shadow to trigger these functions. 
 
 # Setup
 * Step 1. Download key, cert, and root-CA to your working folder

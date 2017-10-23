@@ -1,6 +1,7 @@
 var awsIot = require('aws-iot-device-sdk');
-var display = require('./DisplayControl');
-var player = require('./MusicPlayerControl');
+var display = require('./lib/DisplayControl');
+var player = require('./lib/MusicPlayerControl');
+var mysystem = require('./lib/SystemControl')
 var thing = require('./thing.json');
 var thingShadows = awsIot.thingShadow(thing);
 
@@ -25,13 +26,11 @@ function UpdateBiosSerialNumber () {
         var exec = require('child_process').execFile;
         console.log("fun() start");
         exec('wmic', ['bios', 'get', 'serialnumber'], function(err, data) {
-        var sn =  data.split('\n')[1].replace(/\r/g,'');
-        var clientTokenIP = thingShadows.update(thing.clientId, generateStateUpdateForSerialNumber(sn));
-        console.log("Update:" + clientTokenIP);
+            var sn =  data.split('\n')[1].replace(/\r/g,'');
+            var clientTokenIP = thingShadows.update(thing.clientId, generateStateUpdateForSerialNumber(sn));
+            console.log("Update:" + clientTokenIP);
         });
 }
-
-
 
 
 
@@ -91,6 +90,11 @@ thingShadows
                 player.musicOpen(function(updatereport){
                     console.log("Update:" + thingShadows.update(thing.clientId, updatereport));
                 });             
+            } else if(stateObject.state.system == 'shutdown'){
+                console.log("shutdown system");
+                mysystem.shutdown(function(updatereport){
+                    console.log("Update:"+thingShadows.update(thing.clientId,updatereport));
+                });    
             }
 
         });

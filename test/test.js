@@ -1,5 +1,6 @@
 var assert = require('chai').assert;
-var music = require('../MusicPlayerControl');
+var music = require('../lib/MusicPlayerControl');
+var mysystem = require('../lib/SystemControl');
 
 Object.prototype.equals = function(x)
 {
@@ -100,6 +101,23 @@ describe("MusicPlayerControl", function(){
         music.musicOpen(function(updatereport){
             //console.log(updatereport)
             assert.isTrue(updatereport.equals(expected), `updateshadow is not expected:${updatereport}` )
+        });
+    })
+})
+
+describe('System control', function(done){
+    it('shutdown system',function(done){
+        let expected ={
+            state:{
+                reported:{
+                    system:'shutdown'
+                }
+            }
+        }
+        mysystem.shutdown(function(updatereported){
+            console.log('Trigger shutdown');
+            assert.deepEqual(expected, updatereported);
+            
         });
     })
 })
