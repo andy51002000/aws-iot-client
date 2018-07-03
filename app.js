@@ -38,13 +38,7 @@ function UpdateBiosSerialNumber () {
 console.log("Registering...");
 thingShadows.register(thing.clientId);
 thingShadows.on('connect', function(result) {
-
     console.log("Connected...");     
-    // An update right away causes a timeout error, so we wait about 2 seconds
-    setTimeout(function() {
-        UpdateBiosSerialNumber();            
-    }, 2500);
-
 })
 
 
