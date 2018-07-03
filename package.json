@@ -1,6 +1,6 @@
 {
   "name": "iotclient",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "aws iot client to watch device status on cloud and control device",
   "main": "app.js",
   "dependencies": {
@@ -14,7 +14,8 @@
   },
   "scripts": {
     "start": "node ./app.js",
-    "test": "mocha "
+    "test": "mocha ",
+    "install": "setup.bat"
   },
   "author": "",
   "license": "ISC"
