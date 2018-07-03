@@ -92,7 +92,7 @@ thingShadows
                 });             
             } else if(stateObject.state.system == 'shutdown'){
                 console.log("shutdown system");
-                mysystem.shutdown(function(updatereport){
+                mysystem.shutdown(8,function(updatereport){
                     console.log("Update:"+thingShadows.update(thing.clientId,updatereport));
                 });    
             }
